@@ -10,26 +10,22 @@ namespace MiprimerProyecto
     {
         static void Main(string[] args)
         {
+            //Ejercicio de pedir el nombre y la edad y dar un saludo
             string continuar = "s";
             while (continuar == "s")
             {
                 Console.Write("Nombre: ");
                 String nombre = Console.ReadLine();
-
+                
                 Console.Write("Edad: ");
-                if (int.TryParse(Console.ReadLine(), out int edad))
-                {
-                    Console.WriteLine("Hola, {0} bienvenido a Progra I, estas en la mejor epoca {1} de aprender a programar.",
-                        nombre, edad);
+                int edad = int.Parse(Console.ReadLine());
+             
+                Console.WriteLine("Hola, {0} bienvenido a Progra I, estas en la mejor epoca con apenas {1} años para aprender a programar.",
+                    nombre, edad);
 
-                    Console.Write("Continuar = s; Salir = cualquier tecla");
-                    continuar = Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("La edad debe ser un número.");
-                    continuar = "s";
-                }
+                Console.Write("Continuar = s; Salir = cualquier tecla");
+                Console.WriteLine("Continuar = s; Salir = cualquier tecla ");
+                continuar = Console.ReadLine();
             }
         }
     }
