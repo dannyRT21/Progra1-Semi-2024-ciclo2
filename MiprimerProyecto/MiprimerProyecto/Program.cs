@@ -1,48 +1,28 @@
 ﻿using System;
-
-class Program
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
+namespace miPrimerProyecto
 {
-    static void Main()
+    internal class Program
     {
-        string continuar = "s";
-
-        while (continuar.ToLower() == "s")
+        static void Main(string[] args)
         {
-            Console.Clear();
+       
 
-            Console.Write("Número de día (1-7): ");
-            int dia = int.Parse(Console.ReadLine());
-
-            switch (dia)
+            //ejercicio obtener el promedio de una serie de numeros
+            int[] serie = new int[] { 5, 4, 6, 8, 9 }; //32
+            int suma = 0;
+            foreach (int num in serie)
             {
-                case 1:
-                    Console.WriteLine("Lunes");
-                    break;
-                case 2:
-                    Console.WriteLine("Martes");
-                    break;
-                case 3:
-                    Console.WriteLine("Miércoles");
-                    break;
-                case 4:
-                    Console.WriteLine("Jueves");
-                    break;
-                case 5:
-                    Console.WriteLine("Viernes");
-                    break;
-                case 6:
-                    Console.WriteLine("Sábado");
-                    break;
-                case 7:
-                    Console.WriteLine("Domingo");
-                    break;
-                default:
-                    Console.WriteLine("Día inválido");
-                    break;
+                suma += num;
             }
-
-            Console.Write("¿Desea continuar? (s/n): ");
-            continuar = Console.ReadLine();
+            decimal prom = suma / serie.Length;
+            Console.WriteLine("La suma es: {0}, el promedio {1}", suma, prom);
+            //Pausa.
+            Console.ReadLine();
         }
     }
 }
