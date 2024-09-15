@@ -19,6 +19,7 @@ namespace miPrimerProyecto
             Console.ReadLine();
         }
         static double media(int[] serie)
+
         {
             double media = 0;
             foreach (int num in serie)
