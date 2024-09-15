@@ -5,3 +5,10 @@ C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\13-08-24\13-
 C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\13-08-24\13-08-24\obj\Debug\13-08-24.csproj.CoreCompileInputs.cache
 C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\13-08-24\13-08-24\obj\Debug\13-08-24.exe
 C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\13-08-24\13-08-24\obj\Debug\13-08-24.pdb
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\bin\Debug\13-08-24.exe.config
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\bin\Debug\13-08-24.exe
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\bin\Debug\13-08-24.pdb
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\obj\Debug\13-08-24.csproj.AssemblyReference.cache
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\obj\Debug\13-08-24.csproj.CoreCompileInputs.cache
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\obj\Debug\13-08-24.exe
+C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computoUno\prueba\Progra1-Semi-2024-ciclo2\13-08-24\13-08-24\obj\Debug\13-08-24.pdb
