@@ -1,0 +1,13 @@
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\bin\Debug\db_academica.mdf
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\bin\Debug\db_academica_log.ldf
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\bin\Debug\academica.exe.config
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\bin\Debug\academica.exe
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\bin\Debug\academica.pdb
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.csproj.AssemblyReference.cache
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.Form1.resources
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.Properties.Resources.resources
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.csproj.GenerateResource.cache
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.csproj.CoreCompileInputs.cache
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.exe
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.pdb
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.principal.resources
