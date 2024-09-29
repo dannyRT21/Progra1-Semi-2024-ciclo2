@@ -46,18 +46,17 @@
             this.btnAnteriorAlumno = new System.Windows.Forms.Button();
             this.btnPrimeroAlumno = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarAlumno = new System.Windows.Forms.Button();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.btnModificarAlumno = new System.Windows.Forms.Button();
             this.btnNuevoAlumno = new System.Windows.Forms.Button();
             this.grdDatosAlumnos = new System.Windows.Forms.DataGridView();
-            this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
-            this.lblBuscarAlumno = new System.Windows.Forms.Label();
             this.idAlumnos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
+            this.lblBuscarAlumno = new System.Windows.Forms.Label();
             this.grbDatosAlumnos.SuspendLayout();
             this.grbNavegacionAlumno.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -239,27 +238,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBuscarAlumno);
             this.groupBox1.Controls.Add(this.btnEliminarAlumno);
             this.groupBox1.Controls.Add(this.btnModificarAlumno);
             this.groupBox1.Controls.Add(this.btnNuevoAlumno);
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.groupBox1.Location = new System.Drawing.Point(419, 292);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(412, 77);
+            this.groupBox1.Size = new System.Drawing.Size(314, 77);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Navegacion";
-            // 
-            // btnBuscarAlumno
-            // 
-            this.btnBuscarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAlumno.Location = new System.Drawing.Point(311, 32);
-            this.btnBuscarAlumno.Name = "btnBuscarAlumno";
-            this.btnBuscarAlumno.Size = new System.Drawing.Size(92, 28);
-            this.btnBuscarAlumno.TabIndex = 3;
-            this.btnBuscarAlumno.Text = "Buscar";
-            this.btnBuscarAlumno.UseVisualStyleBackColor = true;
             // 
             // btnEliminarAlumno
             // 
@@ -309,24 +297,6 @@
             this.grdDatosAlumnos.TabIndex = 3;
             this.grdDatosAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatosAlumnos_CellClick);
             // 
-            // txtBuscarAlumno
-            // 
-            this.txtBuscarAlumno.Location = new System.Drawing.Point(518, 40);
-            this.txtBuscarAlumno.Name = "txtBuscarAlumno";
-            this.txtBuscarAlumno.Size = new System.Drawing.Size(345, 20);
-            this.txtBuscarAlumno.TabIndex = 4;
-            this.txtBuscarAlumno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarAlumno_KeyUp);
-            // 
-            // lblBuscarAlumno
-            // 
-            this.lblBuscarAlumno.AutoSize = true;
-            this.lblBuscarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarAlumno.Location = new System.Drawing.Point(432, 37);
-            this.lblBuscarAlumno.Name = "lblBuscarAlumno";
-            this.lblBuscarAlumno.Size = new System.Drawing.Size(80, 24);
-            this.lblBuscarAlumno.TabIndex = 5;
-            this.lblBuscarAlumno.Text = "Buscar:";
-            // 
             // idAlumnos
             // 
             this.idAlumnos.DataPropertyName = "idAlumnos";
@@ -357,6 +327,24 @@
             this.Telefono.DataPropertyName = "telefono";
             this.Telefono.HeaderText = "TELEFONO";
             this.Telefono.Name = "Telefono";
+            // 
+            // txtBuscarAlumno
+            // 
+            this.txtBuscarAlumno.Location = new System.Drawing.Point(518, 40);
+            this.txtBuscarAlumno.Name = "txtBuscarAlumno";
+            this.txtBuscarAlumno.Size = new System.Drawing.Size(345, 20);
+            this.txtBuscarAlumno.TabIndex = 4;
+            this.txtBuscarAlumno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarAlumno_KeyUp);
+            // 
+            // lblBuscarAlumno
+            // 
+            this.lblBuscarAlumno.AutoSize = true;
+            this.lblBuscarAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarAlumno.Location = new System.Drawing.Point(432, 37);
+            this.lblBuscarAlumno.Name = "lblBuscarAlumno";
+            this.lblBuscarAlumno.Size = new System.Drawing.Size(80, 24);
+            this.lblBuscarAlumno.TabIndex = 5;
+            this.lblBuscarAlumno.Text = "Buscar:";
             // 
             // Form1
             // 
@@ -403,7 +391,6 @@
         private System.Windows.Forms.Label lblRegistrosAlumnos;
         private System.Windows.Forms.Button btnUltimoAlumno;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnBuscarAlumno;
         private System.Windows.Forms.Button btnEliminarAlumno;
         private System.Windows.Forms.Button btnModificarAlumno;
         private System.Windows.Forms.Button btnNuevoAlumno;
