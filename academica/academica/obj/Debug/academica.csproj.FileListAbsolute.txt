@@ -10,4 +10,6 @@ C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debu
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.csproj.CoreCompileInputs.cache
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.exe
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.pdb
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.materias.resources
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.principal.resources
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\academica\academica\obj\Debug\academica.docentes.resources

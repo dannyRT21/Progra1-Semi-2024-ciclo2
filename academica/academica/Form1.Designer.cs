@@ -242,7 +242,7 @@
             this.groupBox1.Controls.Add(this.btnModificarAlumno);
             this.groupBox1.Controls.Add(this.btnNuevoAlumno);
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(419, 292);
+            this.groupBox1.Location = new System.Drawing.Point(419, 301);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(314, 77);
             this.groupBox1.TabIndex = 2;
