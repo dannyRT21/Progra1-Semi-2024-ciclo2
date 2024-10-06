@@ -36,5 +36,10 @@ namespace academica
           
             objForm.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
