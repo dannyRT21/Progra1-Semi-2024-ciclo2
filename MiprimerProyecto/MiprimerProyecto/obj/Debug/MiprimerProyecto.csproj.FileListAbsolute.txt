@@ -1,7 +1,0 @@
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\bin\Debug\MiprimerProyecto.exe.config
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\bin\Debug\MiprimerProyecto.exe
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\bin\Debug\MiprimerProyecto.pdb
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\obj\Debug\MiprimerProyecto.csproj.AssemblyReference.cache
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\obj\Debug\MiprimerProyecto.csproj.CoreCompileInputs.cache
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\obj\Debug\MiprimerProyecto.exe
-C:\Users\MINEDUCYT\Desktop\UGB ciclo 2\Progra l\computo 1\helloRepo\MiprimerProyecto\MiprimerProyecto\obj\Debug\MiprimerProyecto.pdb
