@@ -393,6 +393,7 @@
             this.txtBuscarDocente.Name = "txtBuscarDocente";
             this.txtBuscarDocente.Size = new System.Drawing.Size(347, 20);
             this.txtBuscarDocente.TabIndex = 23;
+            this.txtBuscarDocente.TextChanged += new System.EventHandler(this.txtBuscarDocente_TextChanged);
             this.txtBuscarDocente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarDocente_KeyUp);
             // 
             // grbDatosDocente

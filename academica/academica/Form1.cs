@@ -217,6 +217,15 @@ namespace academica
         {
             seleccionarAllumno();
         }
+
+        private void txtBuscarAlumno_TextChanged(object sender, EventArgs e)
+        {
+            filtrarDatos(txtBuscarAlumno.Text);
+            //if (e.KeyValue == 13)//tecla enter
+            {
+                seleccionarAllumno();
+            }
+        }
     }
     }
 

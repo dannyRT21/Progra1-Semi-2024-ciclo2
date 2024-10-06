@@ -206,8 +206,10 @@ namespace academica
             seleccionarAlDocente();
         }
 
+        private void txtBuscarDocente_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 
 }
