@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\Alumno.html",
+      "PackagePath": "staticwebassets\\views\\Alumno.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.sistema_academico.props",
+      "PackagePath": "build\\sistema_academico.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.sistema_academico.props",
+      "PackagePath": "buildMultiTargeting\\sistema_academico.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.sistema_academico.props",
+      "PackagePath": "buildTransitive\\sistema_academico.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.sistema_academico.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
