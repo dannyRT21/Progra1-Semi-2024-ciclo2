@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "q5c9ESPtQQmiKGg8bJo4GH84dOri/T+i4w72whks2dE=",
+  "Source": "sistema_academico",
+  "BasePath": "_content/sistema_academico",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "sistema_academico\\wwwroot",
+      "Source": "sistema_academico",
+      "ContentRoot": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
