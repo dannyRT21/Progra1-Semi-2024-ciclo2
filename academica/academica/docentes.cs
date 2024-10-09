@@ -34,7 +34,7 @@ namespace academica
             ds.Clear();
             ds = objConexion.obtenerDatos();
             miTabla = ds.Tables["docentes"];
-            miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["Id"] };
+            miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["IdDocentes"] };
             grdDatosDocente.DataSource = miTabla;
             mostrarDatosDocente();
         }
@@ -196,9 +196,17 @@ namespace academica
         }
 
         private void seleccionarAlDocente()
+      
         {
-            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosDocente.CurrentRow.Cells["Id"].Value.ToString()));
-            mostrarDatosDocente();
+           // try
+           // {
+                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosDocente.CurrentRow.Cells["IdDocentes"].Value.ToString()));
+                mostrarDatosDocente();
+            //}
+            //catch (Exception)
+           // {
+                //MessageBox.Show("Error: Registro NO encontrado", "Error en la seleccion de materias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           // }
         }
 
         private void grdDatosDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,10 +214,8 @@ namespace academica
             seleccionarAlDocente();
         }
 
-        private void txtBuscarDocente_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
     }
 
 }

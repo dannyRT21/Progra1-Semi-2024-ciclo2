@@ -179,10 +179,18 @@ namespace academica
         }
         private void seleccionarMateria()
         {
-
-            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
-            mostrarDatosMaterias();
-
+            try
+            {
+                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
+                mostrarDatosMaterias();
+            }
+            catch (Exception)
+            {
+                {
+                    MessageBox.Show("Error: Registro NO encontrado", "Error en la seleccion de materias", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+          
         }
 
     }
