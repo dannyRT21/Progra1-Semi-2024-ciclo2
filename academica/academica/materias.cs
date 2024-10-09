@@ -103,7 +103,9 @@ namespace academica
             }
             else
             {//Guardar
-                String[] materias = {accion, miTabla.Rows[posicion].ItemArray[0].ToString(),txtCodigoMaterias.Text, txtNombreMaterias.Text, txtUvMaterias.Text
+                String[] materias = 
+                    {accion, miTabla.Rows[posicion].ItemArray[0].ToString(),
+                    txtCodigoMaterias.Text, txtNombreMaterias.Text, txtUvMaterias.Text
                 };
                 String respuesta = objConexion.administrarMaterias(materias);
                 if (respuesta != "1")
@@ -177,19 +179,11 @@ namespace academica
         }
         private void seleccionarMateria()
         {
-            try
-            {
-                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["i"].Value.ToString()));
-                mostrarDatosMaterias();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error: Registro NO encontrado", "Error en la seleccion de materias", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
+            mostrarDatosMaterias();
+
         }
-
-
-
 
     }
 }
