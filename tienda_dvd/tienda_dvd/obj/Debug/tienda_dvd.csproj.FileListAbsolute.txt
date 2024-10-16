@@ -1,0 +1,17 @@
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\bin\Debug\tienda.mdf
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\bin\Debug\tienda_log.ldf
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\bin\Debug\tienda_dvd.exe.config
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\bin\Debug\tienda_dvd.exe
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\bin\Debug\tienda_dvd.pdb
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.csproj.AssemblyReference.cache
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.Clientes.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.Properties.Resources.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.csproj.GenerateResource.cache
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.csproj.CoreCompileInputs.cache
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.exe
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.pdb
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.Proveedores.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.Pelis.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.principal.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.fmr_usuario.resources
+C:\Users\MINEDUCYT\Desktop\tienda_dvd\tienda_dvd\obj\Debug\tienda_dvd.login.resources
