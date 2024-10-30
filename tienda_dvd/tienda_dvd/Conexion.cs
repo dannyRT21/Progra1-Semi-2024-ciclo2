@@ -85,7 +85,7 @@ namespace tienda_dvd
             }
             else if (datos[0] == "eliminar")
             {
-                sql = "DELETE FROM usuario WHERE idUsuario=" + datos[1];
+                sql = "DELETE FROM usuarios WHERE idUsuario=" + datos[1];
             }
             return ejecutarSQL(sql);
         }

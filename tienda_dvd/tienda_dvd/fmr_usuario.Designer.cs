@@ -52,9 +52,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsarioCampo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblBuscarProveedor = new System.Windows.Forms.Label();
+            this.txtBuscarUsuarios = new System.Windows.Forms.TextBox();
+            this.grdDatosUsuarios = new System.Windows.Forms.DataGridView();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbNavegacionUsuarios.SuspendLayout();
             this.grbEdicionUsuario.SuspendLayout();
             this.grbDatosClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDatosUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -75,7 +85,7 @@
             this.grbNavegacionUsuarios.Controls.Add(this.btnPrimeroUsuario);
             this.grbNavegacionUsuarios.Controls.Add(this.btnSiguienteUsuario);
             this.grbNavegacionUsuarios.Controls.Add(this.btnAnteriorUsuario);
-            this.grbNavegacionUsuarios.Location = new System.Drawing.Point(493, 284);
+            this.grbNavegacionUsuarios.Location = new System.Drawing.Point(22, 341);
             this.grbNavegacionUsuarios.Name = "grbNavegacionUsuarios";
             this.grbNavegacionUsuarios.Size = new System.Drawing.Size(303, 65);
             this.grbNavegacionUsuarios.TabIndex = 63;
@@ -150,7 +160,7 @@
             this.grbEdicionUsuario.Controls.Add(this.btnEliminarUsuario);
             this.grbEdicionUsuario.Controls.Add(this.btnModificarUsuario);
             this.grbEdicionUsuario.Controls.Add(this.btnNuevoUsuario);
-            this.grbEdicionUsuario.Location = new System.Drawing.Point(493, 92);
+            this.grbEdicionUsuario.Location = new System.Drawing.Point(380, 355);
             this.grbEdicionUsuario.Name = "grbEdicionUsuario";
             this.grbEdicionUsuario.Size = new System.Drawing.Size(359, 57);
             this.grbEdicionUsuario.TabIndex = 62;
@@ -213,14 +223,14 @@
             this.grbDatosClientes.Enabled = false;
             this.grbDatosClientes.Location = new System.Drawing.Point(22, 60);
             this.grbDatosClientes.Name = "grbDatosClientes";
-            this.grbDatosClientes.Size = new System.Drawing.Size(417, 354);
+            this.grbDatosClientes.Size = new System.Drawing.Size(417, 258);
             this.grbDatosClientes.TabIndex = 61;
             this.grbDatosClientes.TabStop = false;
             this.grbDatosClientes.Text = "Datos clientes";
             // 
             // txtDireccionUsuario
             // 
-            this.txtDireccionUsuario.Location = new System.Drawing.Point(103, 280);
+            this.txtDireccionUsuario.Location = new System.Drawing.Point(112, 224);
             this.txtDireccionUsuario.Name = "txtDireccionUsuario";
             this.txtDireccionUsuario.Size = new System.Drawing.Size(249, 20);
             this.txtDireccionUsuario.TabIndex = 39;
@@ -230,7 +240,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(-2, 278);
+            this.label8.Location = new System.Drawing.Point(7, 222);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 20);
             this.label8.TabIndex = 38;
@@ -239,7 +249,7 @@
             // txtNombreUSuario
             // 
             this.txtNombreUSuario.HideSelection = false;
-            this.txtNombreUSuario.Location = new System.Drawing.Point(103, 177);
+            this.txtNombreUSuario.Location = new System.Drawing.Point(103, 144);
             this.txtNombreUSuario.Name = "txtNombreUSuario";
             this.txtNombreUSuario.Size = new System.Drawing.Size(249, 20);
             this.txtNombreUSuario.TabIndex = 37;
@@ -249,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(13, 177);
+            this.label7.Location = new System.Drawing.Point(13, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 36;
@@ -257,8 +267,9 @@
             // 
             // txtConficClave
             // 
-            this.txtConficClave.Location = new System.Drawing.Point(147, 120);
+            this.txtConficClave.Location = new System.Drawing.Point(148, 91);
             this.txtConficClave.Name = "txtConficClave";
+            this.txtConficClave.PasswordChar = '♡';
             this.txtConficClave.Size = new System.Drawing.Size(249, 20);
             this.txtConficClave.TabIndex = 35;
             this.txtConficClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -267,7 +278,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 120);
+            this.label5.Location = new System.Drawing.Point(7, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 20);
             this.label5.TabIndex = 34;
@@ -275,7 +286,7 @@
             // 
             // txtTelefonoUsuario
             // 
-            this.txtTelefonoUsuario.Location = new System.Drawing.Point(103, 224);
+            this.txtTelefonoUsuario.Location = new System.Drawing.Point(103, 183);
             this.txtTelefonoUsuario.Name = "txtTelefonoUsuario";
             this.txtTelefonoUsuario.Size = new System.Drawing.Size(249, 20);
             this.txtTelefonoUsuario.TabIndex = 33;
@@ -285,7 +296,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 222);
+            this.label4.Location = new System.Drawing.Point(8, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 32;
@@ -293,8 +304,9 @@
             // 
             // txtClveUsuario
             // 
-            this.txtClveUsuario.Location = new System.Drawing.Point(103, 69);
+            this.txtClveUsuario.Location = new System.Drawing.Point(103, 52);
             this.txtClveUsuario.Name = "txtClveUsuario";
+            this.txtClveUsuario.PasswordChar = '♡';
             this.txtClveUsuario.Size = new System.Drawing.Size(249, 20);
             this.txtClveUsuario.TabIndex = 29;
             this.txtClveUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -303,7 +315,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 67);
+            this.label2.Location = new System.Drawing.Point(28, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 28;
@@ -327,11 +339,96 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Usuario:";
             // 
+            // lblBuscarProveedor
+            // 
+            this.lblBuscarProveedor.AutoSize = true;
+            this.lblBuscarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarProveedor.Location = new System.Drawing.Point(505, 61);
+            this.lblBuscarProveedor.Name = "lblBuscarProveedor";
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(70, 20);
+            this.lblBuscarProveedor.TabIndex = 66;
+            this.lblBuscarProveedor.Text = "Buscar:";
+            // 
+            // txtBuscarUsuarios
+            // 
+            this.txtBuscarUsuarios.Location = new System.Drawing.Point(581, 63);
+            this.txtBuscarUsuarios.Name = "txtBuscarUsuarios";
+            this.txtBuscarUsuarios.Size = new System.Drawing.Size(291, 20);
+            this.txtBuscarUsuarios.TabIndex = 67;
+            this.txtBuscarUsuarios.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarUsuarios_KeyUp);
+            // 
+            // grdDatosUsuarios
+            // 
+            this.grdDatosUsuarios.AllowUserToAddRows = false;
+            this.grdDatosUsuarios.AllowUserToDeleteRows = false;
+            this.grdDatosUsuarios.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.grdDatosUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDatosUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idUsuario,
+            this.usuario,
+            this.clave,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdDatosUsuarios.Location = new System.Drawing.Point(445, 89);
+            this.grdDatosUsuarios.Name = "grdDatosUsuarios";
+            this.grdDatosUsuarios.ReadOnly = true;
+            this.grdDatosUsuarios.Size = new System.Drawing.Size(427, 213);
+            this.grdDatosUsuarios.TabIndex = 65;
+            this.grdDatosUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatosUsuarios_CellClick);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.DataPropertyName = "idUsuario";
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Visible = false;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "USUARIO";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // clave
+            // 
+            this.clave.DataPropertyName = "clave";
+            this.clave.HeaderText = "CLAVE";
+            this.clave.Name = "clave";
+            this.clave.ReadOnly = true;
+            this.clave.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "DIRECCION";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
             // fmr_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 450);
+            this.Controls.Add(this.lblBuscarProveedor);
+            this.Controls.Add(this.txtBuscarUsuarios);
+            this.Controls.Add(this.grdDatosUsuarios);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grbNavegacionUsuarios);
             this.Controls.Add(this.grbEdicionUsuario);
@@ -344,6 +441,7 @@
             this.grbEdicionUsuario.ResumeLayout(false);
             this.grbDatosClientes.ResumeLayout(false);
             this.grbDatosClientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDatosUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +473,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccionUsuario;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblBuscarProveedor;
+        private System.Windows.Forms.TextBox txtBuscarUsuarios;
+        private System.Windows.Forms.DataGridView grdDatosUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }

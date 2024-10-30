@@ -35,7 +35,7 @@ namespace tienda_dvd
 
             miTabla = ds.Tables["usuarios"];
             miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["idUsuario"] };
-            //grdDatosUsuarios.DataSource = miTabla;
+            grdDatosUsuarios.DataSource = miTabla;
             mostrarDatosUsuarios();
         }
         private void mostrarDatosUsuarios()
@@ -43,6 +43,9 @@ namespace tienda_dvd
             if (miTabla.Rows.Count > 0)
             {
                 txtUsarioCampo.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
+                txtClveUsuario.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
+                txtConficClave.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
+
                 txtNombreUSuario.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
                 txtDireccionUsuario.Text = miTabla.Rows[posicion].ItemArray[4].ToString();
                 txtTelefonoUsuario.Text = miTabla.Rows[posicion].ItemArray[5].ToString();
@@ -192,14 +195,16 @@ namespace tienda_dvd
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de eliminar a " + txtNombreUSuario.Text.Trim() + "?", "Eliminar usuario", MessageBoxButtons.YesNo,
+            if (MessageBox.Show  ("Estas seguro de eliminar a "   +   txtNombreUSuario.Text.Trim() + "?", "Eliminar Usuario", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                String[] usuarios = { "eliminar", miTabla.Rows[posicion]["idUsuario"].ToString() };
+                String[] usuarios = {
+                    "eliminar",miTabla.Rows[posicion].ItemArray[0].ToString()
+                };
                 String respuesta = ObjConexion.mantenimiento_Usuarios(usuarios);
                 if (respuesta != "1")
                 {
-                    MessageBox.Show(respuesta, "Error en el registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Error en el registro de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -207,7 +212,40 @@ namespace tienda_dvd
                     actualizarDs();
                     mostrarDatosUsuarios();
                 }
+
             }
+        }
+        private void filtrarDatos(string filtro)
+        {
+            DataView dv = miTabla.DefaultView;
+            dv.RowFilter = "usuario like '%" + filtro + "%' OR nombre like '%" + filtro + "%' OR telefono like '%" + filtro + "%'";
+            grdDatosUsuarios.DataSource = dv;
+        }
+        private void SeleccionarUsuario()
+        {
+            try
+            {
+                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString()));
+                mostrarDatosUsuarios();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error: Registro NO encontrado", "Error en la selección de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtBuscarUsuarios_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarDatos(txtBuscarUsuarios.Text);
+            if (e.KeyValue == 13)
+            {//Tecla enter
+                SeleccionarUsuario();
+            }
+        }
+
+        private void grdDatosUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SeleccionarUsuario();
         }
     }
 }
