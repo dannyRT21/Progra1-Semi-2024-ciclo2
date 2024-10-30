@@ -115,6 +115,26 @@ namespace tienda_dvd
 
             return ejecutarSQL(sql);
         }
+        public bool ValidarUsuario(string usuario, string contrasena)
+        {
+            try
+            {
+                misComandos.Connection = miConexion;
+                misComandos.CommandText = "SELECT COUNT(*) FROM usuarios WHERE usuario = @usuario AND clave = @contrasena";
+                misComandos.Parameters.Clear(); // Limpiar los parámetros antes de cada ejecución
+                misComandos.Parameters.AddWithValue("@usuario", usuario);
+                misComandos.Parameters.AddWithValue("@contrasena", contrasena);
+
+                int numFilas = (int)misComandos.ExecuteScalar();
+                return numFilas > 0;
+            }
+            catch (Exception ex)
+            {
+                // alerta de error al validar usuario
+                MessageBox.Show("Error al validar usuario: " + ex.Message);
+                return false;
+            }
+        }
 
         private String ejecutarSQL(String sql)
         {
