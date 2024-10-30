@@ -252,3 +252,9 @@ C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_ac
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\obj\Debug\net8.0\sistema_academico.genruntimeconfig.cache
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\obj\Debug\net8.0\ref\sistema_academico.dll
 C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\sistema_academico.staticwebassets.runtime.json
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\MINEDUCYT\Desktop\Progra1-Semi-2024-ciclo2\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
