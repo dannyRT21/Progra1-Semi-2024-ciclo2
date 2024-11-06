@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YjeCOHagkYQ=",
+  "dgSpecHash": "dOM1stSaBv4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
+  "projectFilePath": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MINEDUCYT\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\MINEDUCYT\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

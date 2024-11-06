@@ -1,0 +1,72 @@
+﻿﻿<form id="frmBusquedaAlumno">
+    <div class="card text-bg-dark mb-3">
+        <div class="card-header">
+            <div class="d-flex">
+                Consulta de Alumnos
+                <div class="ms-auto">
+                    <button type="button" data-form="busqueda_alumno" class="btn-close btn-close-white"></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-hover" id="tblListadoAlumnos">
+                <thead>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script>
+    listarAlumnos();
+
+    async function listarAlumnos() {
+        const respuesta = await fetch("/api/Alumnoes", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }), alumnos = await respuesta.json();
+        let filas = "";
+        alumnos.forEach(alumno => {
+            filas += `<tr onClick='modificarAlumno(${JSON.stringify(alumno)})'>
+            <td>${alumno.codigo}</td>
+            <td>${alumno.nombre}</td>
+            <td>${alumno.direccion}</td>
+            <td>${alumno.telefono}</td>
+            <td><button class="btn btn-danger" onClick='eliminarAlumno(${JSON.stringify(alumno)}, event)'>DEL</button></td>
+        </tr>`;
+        });
+        document.querySelector("#tblListadoAlumnos > tbody").innerHTML = filas;
+    }
+    function eliminarAlumno(alumno, e) {
+        e.preventDefault();
+        limpiarDatosAlumnos();
+
+        alertify.confirm("Eliminar alumnos", `Esta seguro de eliminar a ${alumno.nombre}`, async (e) => {
+            let respuesta = await fetch(`/api/Alumnoes/${alumno.idAlumno}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/text"
+                }
+            }),
+                datos = await respuesta.text();//""
+            if (datos && datos.length > 0) {
+                alertify.error(`Nose pudo eliminar el alumno: ${datos}`);
+                console.log(datos);
+            } else {
+                limpiarDatosAlumnos();
+                listarAlumnos();
+            }
+        }, () => {
+            alertify.warning("Eliminacion cancelada.");
+        });
+    }
+</script>

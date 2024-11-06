@@ -8265,11 +8265,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
+      "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
       "projectName": "sistema_academico",
-      "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
+      "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\sistema_academico.csproj",
       "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\obj\\",
+      "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
