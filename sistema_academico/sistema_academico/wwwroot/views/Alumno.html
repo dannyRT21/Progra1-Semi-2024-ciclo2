@@ -2,6 +2,7 @@
     <div class="card text-bg-dark mb-3" style="min-width:700px;">
         <div class="card-header">
             <div class="d-flex">
+
                 Registro de Alumnos
                 <div class="ms-auto">
                     <button type="button" data-form="alumno" class="btn-close btn-close-white"></button>
@@ -53,7 +54,7 @@
         e.preventDefault();
         limpiarDatosAlumnos();
     });
-    async function guardarAlumnos() {
+    async function guardarAlumnos() { 
         let datos = {
             codigo: txtCodigoAlumno.value,
             nombre: txtNombreAlumno.value,
@@ -63,7 +64,7 @@
             method = "POST",
             url = "https://localhost:7041/api/Alumnoes";
         if (frmAlumno.dataset.accion == "modificar") {
-            url = `https://localhost:7041/api/Alumnoss/${frmAlumno.dataset.idalumno}`;
+            url = `https://localhost:7041/api/Alumnoes/${frmAlumno.dataset.idalumno}`;
             datos.idAlumno = frmAlumno.dataset.idalumno;
             method = "PUT";
         }
@@ -79,7 +80,7 @@
             listarAlumnos();
             limpiarDatosAlumnos();
         } else {
-            alertify.error(`Erro al intentar guardar el alumno: ${alumno}`);
+            alertify.error(`Error al intentar guardar el alumno: ${alumno}`);
             conosle.log(alumno);
         }
     }
