@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VApQUMQ5oedKS1Y8jFqMzrxNR7Pv02F1OMEAHOcb6m4=",
+  "Hash": "HCz54hnQpShhWFJqzeL/bOWNzV+X7Ki5cxAM4rRiZ70=",
   "Source": "sistema_academico",
   "BasePath": "_content/sistema_academico",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\views\\busqueda_alumno.html"
+    },
+    {
+      "Identity": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_docente.html",
+      "SourceId": "sistema_academico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "RelativePath": "views/busqueda_docente.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\views\\busqueda_docente.html"
     },
     {
       "Identity": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docente.html",

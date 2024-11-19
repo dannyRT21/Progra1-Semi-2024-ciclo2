@@ -68,8 +68,8 @@ namespace sistema_academico.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
+            return CreatedAtAction("GetAlumno", new { id = alumno.idAlumno }, alumno);
+            // return NoContent();
         }
 
         // POST: api/Alumnoes

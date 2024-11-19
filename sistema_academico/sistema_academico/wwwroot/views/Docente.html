@@ -1,5 +1,5 @@
-﻿<form id="frmDocente" data-iddocente="0" data-accion="nuevo">
-    <div class="card text-bg-dark mb-3" style="min-width:700px;">
+﻿﻿﻿﻿<form id="frmDocente" data-iddocente="0" data-accion="nuevo">
+    <div class="card text-bg-dark mb-3" style="width:700px;">
         <div class="card-header">
             <div class="d-flex">
                 Registro de Docentes
@@ -68,59 +68,64 @@
         };
         reader.readAsDataURL(archivo);
     }
-        frmDocente.addEventListener('submit', e => {
-            e.preventDefault();
-            guardarDocentes();
-        });
-        frmDocente.addEventListener('reset', e => {
-            e.preventDefault();
-            limpiarDatosDocentes();
-        });
-        async function guardarDocentes() {
-            let datos = {
-                codigo: txtCodigoDocente.value,
-                nombre: txtNombreDocente.value,
-                direccion: txtDireccionDocente.value,
-                telefono: txtTelefonoDocente.value,
+    frmDocente.addEventListener('submit', e => {
+        e.preventDefault();
+        guardarDocentes();
+    });
+    frmDocente.addEventListener('reset', e => {
+        e.preventDefault();
+        limpiarDatosDocentes();
+    });
+    async function guardarDocentes() {
+        let datos = {
+            codigo: txtCodigoDocente.value,
+            nombre: txtNombreDocente.value,
+            direccion: txtDireccionDocente.value,
+            telefono: txtTelefonoDocente.value,
+            foto: miArchivo.split(",")[1]
+        },
+            method = "POST",
+            url = "https://localhost:7041/api/Docentes";
+        if (frmDocente.dataset.accion == "modificar") {
+            url = `https://localhost:7041/api/Docentes${frmDocente.dataset.iddocente}`;
+            datos.idDocente = frmDocente.dataset.iddocente;
+            method = "PUT";
+        }
+        const respuesta = await fetch(url, {
+            method,
+            headers: {
+                "Content-Type": "application/json"
             },
-                method = "POST",
-                url = "https://localhost:7041/api/Docentes";
-            if (frmDocente.dataset.accion == "modificar") {
-                url = `https://localhost:7041/api/Docentes/${frmDocente.dataset.iddocente}`;
-                datos.idDocente = frmDocente.dataset.iddocente;
-                method = "PUT";
-            }
-            const respuesta = await fetch(url, {
-                method,
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(datos)
-            }), docente = await respuesta.json();
-            if (docente && docente?.idDocente > 0) {
-                alertify.success("Docente guardado con exito.");
-                listarDocentes();
-                limpiarDatosDocentes();
-            } else {
-                alertify.error(`Erro al intentar guardar el docente: ${docente}`);
-                conosle.log( docente );
-            }
+            body: JSON.stringify(datos)
+        }), docente = await respuesta.json();
+        if (docente && docente?.idDocente > 0) {
+            alertify.success("Docente guardado con exito.");
+            listarDocentes();
+            limpiarDatosDocentes();
+        } else {
+            alertify.error(`Error al intentar guardar el docente: ${docente}`);
+            conosle.log(docente);
         }
+    }
 
-        function modificarDocente(docente) {
-            frmDocente.dataset.iddocente = docente.idDocente;
-            frmDocente.dataset.accion = "modificar";
-            txtCodigoDocente.value = docente.codigo;
-            txtNombreDocente.value = docente.nombre;
-            txtDireccionDocente.value = docente.direccion;
-            txtTelefonoDocente.value = docente.telefono;
-        }
-        function limpiarDatosDocentes() {
-            frmDocente.dataset.iddocente = 0;
-            frmDocente.dataset.accion = "nuevo";
-            txtCodigoDocente.value = "";
-            txtNombreDocente.value = "";
-            txtDireccionDocente.value = "";
-            txtTelefonoDocente.value = "";
-        }
+    function modificarDocente(docente) {
+        frmDocente.dataset.iddocente = docente.idDocente;
+        frmDocente.dataset.accion = "modificar";
+        txtCodigoDocente.value = docente.codigo;
+        txtNombreDocente.value = docente.nombre;
+        txtDireccionDocente.value = docente.direccion;
+        txtTelefonoDocente.value = docente.telefono;
+        miArchivo = `data:image/png;base64,${docente.foto}`
+        $("#imgPreVisualizacionFotoDocente").attr("src", miArchivo);
+    }
+    function limpiarDatosDocentes() {
+        frmDocente.dataset.iddocente = 0;
+        frmDocente.dataset.accion = "nuevo";
+        txtCodigoDocente.value = "";
+        txtNombreDocente.value = "";
+        txtDireccionDocente.value = "";
+        txtTelefonoDocente.value = "";
+        $("#imgPreVisualizacionFotoDocente").attr("src", "");
+        miArchivo = null;
+    }
 </script>

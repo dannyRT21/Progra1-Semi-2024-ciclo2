@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\views\\busqueda_alumno.html"
     },
     {
+      "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_docente.html",
+      "PackagePath": "staticwebassets\\views\\busqueda_docente.html"
+    },
+    {
       "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",
       "PackagePath": "staticwebassets\\views\\index.html"
     },

@@ -1,0 +1,104 @@
+﻿<form id="frmMatricula" data-idMatricula="0" data-accion="nuevo">
+    <div class="card text-bg-dark mb-3" style="min-width:700px;">
+        <div class="card-header">
+            <div class="d-flex">
+
+                Registro de Matriculas
+                <div class="ms-auto">
+                    <button type="button" data-form="Matricula" class="btn-close btn-close-white"></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row p-1">
+                <div class="col-3 col-md-2">CODIGO:</div>
+                <div class="col-9 col-md-4">
+                    <input type="text" class="form-control" id="txtCodigoMatricula" name="txtCodigoMatricula" required>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-3 col-md-2">NOMBRE:</div>
+                <div class="col-9 col-md-8">
+                    <input type="text" class="form-control" id="txtNombreMatricula" name="txtNombreMatricula" required>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-3 col-md-2">DIRECCION:</div>
+                <div class="col-9 col-md-10">
+                    <input type="text" class="form-control" id="txtDireccionMatricula" name="txtDireccionMatricula" required>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-3 col-md-2">TELEFONO:</div>
+                <div class="col-9 col-md-4">
+                    <input type="text" class="form-control" id="txtTelefonoMatricula" name="txtTelefonoMatricula" required>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                    <input type="reset" class="btn btn-warning" value="Nuevo">
+                    <button type="button" class="btn btn-success" onclick="abrirVentanas('busqueda_Matricula')">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    frmMatricula.addEventListener('submit', e => {
+        e.preventDefault();
+        guardarMatriculas();
+    });
+    frmMatricula.addEventListener('reset', e => {
+        e.preventDefault();
+        limpiarDatosMatriculas();
+    });
+    async function guardarMatriculas() {
+        let datos = {
+            codigo: txtCodigoMatricula.value,
+            nombre: txtNombreMatricula.value,
+            direccion: txtDireccionMatricula.value,
+            telefono: txtTelefonoMatricula.value,
+        },
+            method = "POST",
+            url = "https://localhost:7041/api/Matriculaes";
+        if (frmMatricula.dataset.accion == "modificar") {
+            url = `https://localhost:7041/api/Matriculaes/${frmMatricula.dataset.idMatricula}`;
+            datos.idMatricula = frmMatricula.dataset.idMatricula;
+            method = "PUT";
+        }
+        const respuesta = await fetch(url, {
+            method,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datos)
+        }), Matricula = await respuesta.json();
+        if (Matricula && Matricula?.idMatricula > 0) {
+            alertify.success("Matricula guardado con exito.");
+            listarMatriculas();
+            limpiarDatosMatriculas();
+        } else {
+            alertify.error(`Error al intentar guardar el Matricula: ${Matricula}`);
+            conosle.log(Matricula);
+        }
+    }
+
+    function modificarMatricula(Matricula) {
+        frmMatricula.dataset.idMatricula = Matricula.idMatricula;
+        frmMatricula.dataset.accion = "modificar";
+        txtCodigoMatricula.value = Matricula.codigo;
+        txtNombreMatricula.value = Matricula.nombre;
+        txtDireccionMatricula.value = Matricula.direccion;
+        txtTelefonoMatricula.value = Matricula.telefono;
+    }
+    function limpiarDatosMatriculas() {
+        frmMatricula.dataset.idMatricula = 0;
+        frmMatricula.dataset.accion = "nuevo";
+        txtCodigoMatricula.value = "";
+        txtNombreMatricula.value = "";
+        txtDireccionMatricula.value = "";
+        txtTelefonoMatricula.value = "";
+    }
+</script>
