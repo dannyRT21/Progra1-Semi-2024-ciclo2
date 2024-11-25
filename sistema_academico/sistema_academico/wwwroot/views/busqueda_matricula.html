@@ -1,0 +1,70 @@
+﻿﻿<form id="frmBusquedaMatricula">
+    <div class="card text-bg-dark mb-3">
+        <div class="card-header">
+            <div class="d-flex">
+                Consulta de Matriculas
+                <div class="ms-auto">
+                    <button type="button" data-form="busqueda_matricula" class="btn-close btn-close-white"></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-hover" id="tblListadoMatriculas">
+                <thead>
+                    <tr>
+                        <th>ALUMNO</th>
+                        <th>FECHA</th>
+                        <th>PERIODO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script>
+    listarMatriculas();
+
+    async function listarMatriculas() {
+        const respuesta = await fetch("/api/Matriculas", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }), matriculas = await respuesta.json();
+        let filas = "";
+        matriculas.forEach(matricula => {
+            filas += `<tr onClick='modificarMatricula(${JSON.stringify(matricula)})'>
+            <td>${matricula.idAlumno}</td>
+            <td>${matricula.fecha}</td>
+            <td>${matricula.periodo}</td>
+            <td><button class="btn btn-danger" onClick='eliminarMatricula(${JSON.stringify(matricula)}, event)'>DEL</button></td>
+        </tr>`;
+        });
+        document.querySelector("#tblListadoMatriculas > tbody").innerHTML = filas;
+    }
+    function eliminarMatricula(matricula, e) {
+        e.preventDefault();
+        limpiarDatosMatriculas();
+
+        alertify.confirm("Eliminar matriculas", `Esta seguro de eliminar a ${matricula.nombre}`, async (e) => {
+            let respuesta = await fetch(`/api/Matriculas/${matricula.idMatricula}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/text"
+                }
+            }),
+                datos = await respuesta.text();//""
+            if (datos && datos.length > 0) {
+                alertify.error(`Nose pudo eliminar el matricula: ${datos}`);
+                console.log(datos);
+            } else {
+                limpiarDatosMatriculas();
+                listarMatriculas();
+            }
+        }, () => {
+            alertify.warning("Eliminacion cancelada.");
+        });
+    }
+</script>

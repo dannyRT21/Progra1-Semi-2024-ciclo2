@@ -1,44 +1,41 @@
-﻿<form id="frmMatricula" data-idMatricula="0" data-accion="nuevo">
+﻿﻿<form id="frmMatricula" data-idmatricula="0" data-accion="nuevo">
     <div class="card text-bg-dark mb-3" style="min-width:700px;">
         <div class="card-header">
             <div class="d-flex">
-
                 Registro de Matriculas
                 <div class="ms-auto">
-                    <button type="button" data-form="Matricula" class="btn-close btn-close-white"></button>
+                    <button type="button" data-form="matricula" class="btn-close btn-close-white"></button>
                 </div>
             </div>
         </div>
         <div class="card-body">
             <div class="row p-1">
-                <div class="col-3 col-md-2">CODIGO:</div>
-                <div class="col-9 col-md-4">
-                    <input type="text" class="form-control" id="txtCodigoMatricula" name="txtCodigoMatricula" required>
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col-3 col-md-2">NOMBRE:</div>
+                <div class="col-3 col-md-2">ALUMNO:</div>
                 <div class="col-9 col-md-8">
-                    <input type="text" class="form-control" id="txtNombreMatricula" name="txtNombreMatricula" required>
+                    <input list="dlsAlumnos" autocomplete="off" type="text" class="form-control" id="txtAlumnoMatricula" name="txtAlumnoMatricula" required>
+                    <datalist id="dlsAlumnos"></datalist>
                 </div>
             </div>
             <div class="row p-1">
-                <div class="col-3 col-md-2">DIRECCION:</div>
-                <div class="col-9 col-md-10">
-                    <input type="text" class="form-control" id="txtDireccionMatricula" name="txtDireccionMatricula" required>
-                </div>
-            </div>
-            <div class="row p-1">
-                <div class="col-3 col-md-2">TELEFONO:</div>
+                <div class="col-3 col-md-2">FECHA:</div>
                 <div class="col-9 col-md-4">
-                    <input type="text" class="form-control" id="txtTelefonoMatricula" name="txtTelefonoMatricula" required>
+                    <input type="date" class="form-control" id="txtFechaMatricula" name="txtFechaMatricula" required>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-3 col-md-2">Periodo:</div>
+                <div class="col-9 col-md-4">
+                    <select id="cboPeriodoMatricula" name="cboPeriodoMatricula" class="form-control">
+                        <option value="I">Ciclo I</option>
+                        <option value="II">Ciclo II</option>
+                    </select>
                 </div>
             </div>
             <div class="row p-1">
                 <div class="col-12">
                     <input type="submit" class="btn btn-primary" value="Guardar">
                     <input type="reset" class="btn btn-warning" value="Nuevo">
-                    <button type="button" class="btn btn-success" onclick="abrirVentanas('busqueda_Matricula')">Buscar</button>
+                    <button type="button" class="btn btn-success" onclick="abrirVentanas('busqueda_matricula')">Buscar</button>
                 </div>
             </div>
         </div>
@@ -46,6 +43,21 @@
 </form>
 
 <script>
+    obtenerAlumnos();
+
+    async function obtenerAlumnos() {
+        const respuesta = await fetch("/api/Alumnoes", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }), alumnos = await respuesta.json();
+        let filas = "";
+        alumnos.forEach(alumno => {
+            filas += `<option data-idalumno="${alumno.idAlumno}" value="${alumno.nombre}"></option>`;
+        });
+        document.querySelector("#dlsAlumnos").innerHTML = filas;
+    }
     frmMatricula.addEventListener('submit', e => {
         e.preventDefault();
         guardarMatriculas();
@@ -54,18 +66,21 @@
         e.preventDefault();
         limpiarDatosMatriculas();
     });
+    function obtenerIdAlumnoSeleccionado() {
+        const alumnoSeleccionado = Array.from(dlsAlumnos.options).find(opcion => opcion.value === txtAlumnoMatricula.value);
+        return alumnoSeleccionado?.dataset.idalumno || 0;
+    }
     async function guardarMatriculas() {
         let datos = {
-            codigo: txtCodigoMatricula.value,
-            nombre: txtNombreMatricula.value,
-            direccion: txtDireccionMatricula.value,
-            telefono: txtTelefonoMatricula.value,
+            idAlumno: obtenerIdAlumnoSeleccionado(),
+            fecha: txtFechaMatricula.value,
+            periodo: cboPeriodoMatricula.value
         },
             method = "POST",
-            url = "https://localhost:7041/api/Matriculaes";
+            url = "https://localhost:7041/api/Matriculas";
         if (frmMatricula.dataset.accion == "modificar") {
-            url = `https://localhost:7041/api/Matriculaes/${frmMatricula.dataset.idMatricula}`;
-            datos.idMatricula = frmMatricula.dataset.idMatricula;
+            url = `https://localhost:7041/api/Matriculas/${frmMatricula.dataset.idmatricula}`;
+            datos.idMatricula = frmMatricula.dataset.idmatricula;
             method = "PUT";
         }
         const respuesta = await fetch(url, {
@@ -74,27 +89,27 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(datos)
-        }), Matricula = await respuesta.json();
-        if (Matricula && Matricula?.idMatricula > 0) {
+        }), matricula = await respuesta.json();
+        if (matricula && matricula?.idMatricula > 0) {
             alertify.success("Matricula guardado con exito.");
             listarMatriculas();
             limpiarDatosMatriculas();
         } else {
-            alertify.error(`Error al intentar guardar el Matricula: ${Matricula}`);
-            conosle.log(Matricula);
+            alertify.error(`Error al intentar guardar el matricula: ${matricula}`);
+            conosle.log(matricula);
         }
     }
 
-    function modificarMatricula(Matricula) {
-        frmMatricula.dataset.idMatricula = Matricula.idMatricula;
+    function modificarMatricula(matricula) {
+        frmMatricula.dataset.idmatricula = matricula.idMatricula;
         frmMatricula.dataset.accion = "modificar";
-        txtCodigoMatricula.value = Matricula.codigo;
-        txtNombreMatricula.value = Matricula.nombre;
-        txtDireccionMatricula.value = Matricula.direccion;
-        txtTelefonoMatricula.value = Matricula.telefono;
+        txtCodigoMatricula.value = matricula.codigo;
+        txtNombreMatricula.value = matricula.nombre;
+        txtDireccionMatricula.value = matricula.direccion;
+        txtTelefonoMatricula.value = matricula.telefono;
     }
     function limpiarDatosMatriculas() {
-        frmMatricula.dataset.idMatricula = 0;
+        frmMatricula.dataset.idmatricula = 0;
         frmMatricula.dataset.accion = "nuevo";
         txtCodigoMatricula.value = "";
         txtNombreMatricula.value = "";

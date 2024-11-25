@@ -13,12 +13,20 @@
       "PackagePath": "staticwebassets\\views\\Docente.html"
     },
     {
+      "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\Matricula.html",
+      "PackagePath": "staticwebassets\\views\\Matricula.html"
+    },
+    {
       "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
       "PackagePath": "staticwebassets\\views\\busqueda_alumno.html"
     },
     {
       "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_docente.html",
       "PackagePath": "staticwebassets\\views\\busqueda_docente.html"
+    },
+    {
+      "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_matricula.html",
+      "PackagePath": "staticwebassets\\views\\busqueda_matricula.html"
     },
     {
       "Id": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",

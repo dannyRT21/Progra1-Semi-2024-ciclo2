@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HCz54hnQpShhWFJqzeL/bOWNzV+X7Ki5cxAM4rRiZ70=",
+  "Hash": "rQW42g3h3s8YymOghWrINb55kl3HwC1RxBZDb3NnQr0=",
   "Source": "sistema_academico",
   "BasePath": "_content/sistema_academico",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\views\\busqueda_docente.html"
     },
     {
+      "Identity": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_matricula.html",
+      "SourceId": "sistema_academico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "RelativePath": "views/busqueda_matricula.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\views\\busqueda_matricula.html"
+    },
+    {
       "Identity": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docente.html",
       "SourceId": "sistema_academico",
       "SourceType": "Discovered",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\views\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\views\\Matricula.html",
+      "SourceId": "sistema_academico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MINEDUCYT\\Desktop\\cosa\\Progra1-Semi-2024-ciclo2\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "RelativePath": "views/Matricula.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\views\\Matricula.html"
     }
   ]
 }
