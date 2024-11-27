@@ -24,15 +24,18 @@ namespace sistema_academico.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Matricula>>> GetMatriculas()
         {
-            return await _context.Matriculas.ToListAsync();
-            //return await _context.Matriculas.Include(m => m.idAlumno).ToListAsync();
+            //return await _context.Matriculas.ToListAsync();
+            return await _context.Matriculas.Include(m => m.Alumno).ToListAsync();
         }
 
         // GET: api/Matriculas/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Matricula>> GetMatricula(int id)
         {
-            var matricula = await _context.Matriculas.FindAsync(id);
+            var matricula = await _context.Matriculas
+                .Include(m => m.Alumno)
+                .FirstOrDefaultAsync(m=>m.idMatricula==id);
+
 
             if (matricula == null)
             {

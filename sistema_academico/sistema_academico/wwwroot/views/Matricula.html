@@ -67,7 +67,7 @@
         limpiarDatosMatriculas();
     });
     function obtenerIdAlumnoSeleccionado() {
-        const alumnoSeleccionado = Array.from(dlsAlumnos.options).find(opcion => opcion.value === txtAlumnoMatricula.value);
+        const alumnoSeleccionado = Array.from(dlsAlumnos.options).find(opcion => opcion.value.trim() === txtAlumnoMatricula.value.trim());
         return alumnoSeleccionado?.dataset.idalumno || 0;
     }
     async function guardarMatriculas() {
@@ -102,18 +102,17 @@
 
     function modificarMatricula(matricula) {
         frmMatricula.dataset.idmatricula = matricula.idMatricula;
+        frmMatricula.dataset.idmatricula = matricula.idMatricula;
         frmMatricula.dataset.accion = "modificar";
-        txtCodigoMatricula.value = matricula.codigo;
-        txtNombreMatricula.value = matricula.nombre;
-        txtDireccionMatricula.value = matricula.direccion;
-        txtTelefonoMatricula.value = matricula.telefono;
+        txtAlumnoMatricula.value = matricula.alumno.nombre.trim();
+        txtFechaMatricula.value = matricula.fecha.split("T")[0];
+        cboPeriodoMatricula.value = matricula.periodo.trim();
     }
     function limpiarDatosMatriculas() {
         frmMatricula.dataset.idmatricula = 0;
         frmMatricula.dataset.accion = "nuevo";
-        txtCodigoMatricula.value = "";
-        txtNombreMatricula.value = "";
-        txtDireccionMatricula.value = "";
-        txtTelefonoMatricula.value = "";
+        txtAlumnoMatricula.value = "";
+        txtFechaMatricula.value = "";
+        cboPeriodoMatricula.value = "";
     }
 </script>
