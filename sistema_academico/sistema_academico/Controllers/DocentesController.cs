@@ -22,9 +22,26 @@ namespace sistema_academico.Controllers
 
         // GET: api/Docentes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Docente>>> GetDocente()
+        public async Task<ActionResult<IEnumerable<Docente>>> GetDocentes()
         {
             return await _context.Docentes.ToListAsync();
+        }
+
+        // GET: api/Docentes/buscar
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<Docente>>> BuscarDocentes([FromQuery] DocenteBusquedaParametros parametros)
+        {
+            var consulta = _context.Docentes.AsQueryable();
+            if (!string.IsNullOrEmpty(parametros.buscar))
+            {
+                consulta = consulta.Where(d => d.nombre.Contains(parametros.buscar));
+            }
+            if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
+            {
+                consulta = _context.Docentes.AsQueryable();
+                consulta = consulta.Where(d => d.codigo.Contains(parametros.buscar));
+            }
+            return await consulta.ToListAsync();
         }
 
         // GET: api/Docentes/5
@@ -68,7 +85,7 @@ namespace sistema_academico.Controllers
                     throw;
                 }
             }
-return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
+            return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
             //return NoContent();
         }
 
@@ -96,7 +113,7 @@ return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
             _context.Docentes.Remove(docente);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
-            // return NoContent();
+            //return NoContent();
         }
 
         private bool DocenteExists(int id)

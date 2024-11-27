@@ -12,6 +12,10 @@
             <table class="table table-dark table-hover" id="tblListadoAlumnos">
                 <thead>
                     <tr>
+                        <th>BUSCAR</th>
+                        <th colspan="5"><input class="form-control" type="search" name="txtBuscarAlumno" id="txtBuscarAlumno" /></th>
+                    </tr>
+                    <tr>
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>DIRECCION</th>
@@ -25,10 +29,13 @@
     </div>
 </form>
 <script>
-    listarAlumnos(); 
+    listarAlumnos();
 
-    async function listarAlumnos() {
-        const respuesta = await fetch("/api/Alumnoes", {
+    txtBuscarAlumno.addEventListener('keyup', e => {
+        listarAlumnos(txtBuscarAlumno.value);
+    });
+    async function listarAlumnos(buscar = '') {
+        const respuesta = await fetch(`/api/Alumnos/buscar?buscar=${buscar}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -51,7 +58,7 @@
         limpiarDatosAlumnos();
 
         alertify.confirm("Eliminar alumnos", `Esta seguro de eliminar a ${alumno.nombre}`, async (e) => {
-            let respuesta = await fetch(`/api/Alumnoes/${alumno.idAlumno}`, {
+            let respuesta = await fetch(`/api/Alumnos/${alumno.idAlumno}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/text"
