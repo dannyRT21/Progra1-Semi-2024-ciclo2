@@ -14,5 +14,8 @@ namespace sistema_academico.Models
         public string nombre { get; set; }
         public string direccion { get; set; }
         public string telefono { get; set; }
+
+        //relacionar con tabla Matriculas
+        public ICollection<Matricula> Matriculas { get; set; }
     }
 }
